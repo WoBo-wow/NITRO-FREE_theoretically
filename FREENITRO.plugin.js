@@ -83,7 +83,7 @@ module.exports = !global.ZeresPluginLibrary ? class {
       start() {
          let UserModule = WebpackModules.getByProps('getCurrentUser');
          Patcher.after(UserModule, 'getCurrentUser', (_, args, res) => {
-            if (res.premiumType == undefined) res.hasPremiumPerks = 2;
+            if (res.premiumType == undefined) res.premiumType = 2;
          });
       };
 
